@@ -1,0 +1,17 @@
+# backup & cache
+*.bak
+*.bak.*
+*~
+*.swp
+*.pre-dotfiles
+.cache/
+cache/
+
+# jangan pernah di-commit
+.ssh/
+.gnupg/
+*.pem
+*.key
+.env
+.env.*
+secrets/
