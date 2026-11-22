@@ -1,0 +1,102 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "margin-top": 4,
+  "spacing": 0,
+  "modules-left": [],
+  "modules-center": [
+    "group/island"
+  ],
+  "modules-right": [],
+  "temperature": {
+    "thermal-zone": 7,
+    "critical-threshold": 85,
+    "interval": 3,
+    "format": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟  mute",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "scroll-step": 2,
+    "on-click": "pavucontrol"
+  },
+  "network": {
+    "interval": 2,
+    "format-wifi": "  {essid}  ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
+    "format-ethernet": "󰈀  ↓{bandwidthDownBytes} ↑{bandwidthUpBytes}",
+    "format-disconnected": "󰖪  offline",
+    "tooltip-format": "{ifname} · {ipaddr}",
+    "on-click": "nm-connection-editor"
+  },
+  "battery": {
+    "interval": 30,
+    "states": {
+      "warning": 25,
+      "critical": 12
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄  {capacity}%",
+    "format-icons": [
+      "󰁺",
+      "󰁼",
+      "󰁾",
+      "󰂀",
+      "󰁹"
+    ]
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "return-type": "json",
+    "escape": true,
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "format-icons": {
+      "notification": "󰂚",
+      "none": "󰂜",
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰪑",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    }
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  },
+  "group/island": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 350,
+      "transition-left-to-right": true,
+      "children-class": "island-extra",
+      "click-to-reveal": false
+    },
+    "modules": [
+      "clock",
+      "temperature",
+      "tray",
+      "pulseaudio",
+      "network",
+      "battery",
+      "custom/notification"
+    ]
+  }
+}

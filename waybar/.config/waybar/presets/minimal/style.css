@@ -1,0 +1,97 @@
+@import "../../colors.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
+  font-size: 13px;
+  border: none;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#image.arch,
+#temperature,
+#power-profiles-daemon,
+#clock,
+#workspaces,
+#tray,
+#pulseaudio,
+#network,
+#battery,
+#custom-notification {
+  background: alpha(@surface, 0.5);
+  color: @on_surface;
+  border-radius: 14px;
+  padding: 0 14px;
+  border: 1px solid alpha(@on_surface, 0.08);
+}
+
+#custom-arch {
+  color: @primary;
+  font-size: 17px;
+}
+
+#workspaces .taskbar-window {
+  padding: 0 3px;
+}
+
+#temperature.critical,
+#network.disconnected,
+#pulseaudio.muted,
+#battery.critical {
+  color: @error;
+}
+
+#battery.warning {
+  color: @tertiary;
+}
+
+#power-profiles-daemon,
+#workspaces button.special .workspace-label {
+  font-family: "Material Symbols Rounded", "Material Symbols Outlined", "Material Symbols Sharp";
+  font-size: 17px;
+}
+
+#image.arch {
+  padding: 0 12px;
+}
+
+#sys, #group-sys { background: alpha(@surface, 0.5); border-radius: 14px; padding: 0 14px; border: 1px solid alpha(@on_surface, 0.08); }
+#custom-sys, #cpu, #memory { background: transparent; border: none; padding: 0 6px; margin: 0; color: @on_surface; }
+
+#sys #temperature, #group-sys #temperature { background: transparent; border: none; padding: 0 6px; margin: 0; }
+
+#taskbar { background: alpha(@surface, 0.5); border: 1px solid alpha(@on_surface, 0.08); border-radius: 14px; padding: 0 6px; }
+#taskbar button { background: transparent; padding: 0 6px; margin: 3px 0; border-radius: 10px; }
+#taskbar button:hover { background: alpha(@on_surface, 0.1); }
+#taskbar button.active { background: alpha(@primary, 0.28); }
+#taskbar.empty { background: transparent; border: none; padding: 0; }
+#workspaces {
+  background: alpha(@surface, 0.5);
+  color: @on_surface;
+  border-radius: 14px;
+  padding: 0 8px;
+  border: 1px solid alpha(@on_surface, 0.08);
+  font-size: 13px;
+}
+#workspaces button {
+  background: transparent;
+  color: alpha(@on_surface, 0.45);
+  padding: 0 9px;
+  margin: 4px 1px;
+  border-radius: 10px;
+  min-width: 20px;
+}
+#workspaces button.active {
+  background: alpha(@primary, 0.32);
+  color: @on_surface;
+  min-width: 34px;
+}
+#workspaces button:hover {
+  background: alpha(@on_surface, 0.12);
+}
+#workspaces button.urgent {
+  background: alpha(@error, 0.4);
+}

@@ -1,0 +1,5 @@
+@import "../../colors.css";
+window#waybar { background: transparent; }
+#island { background: alpha(@surface, 0.78); border-radius: 18px; padding: 0 14px; margin: 3px 0; }
+#island #clock, #island #temperature, #island #pulseaudio, #island #network, #island #battery, #island #custom-notification, #island #tray, #island #ws1, #island #ws2, #island #ws3, #island #ws4, #island #ws5 { background: transparent; box-shadow: none; border: none; margin: 0; padding: 0 6px; }
+#island #clock { font-weight: 600; }
